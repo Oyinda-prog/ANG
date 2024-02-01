@@ -1,0 +1,52 @@
+<div>create contact works</div>
+<div class="container mx-auto shadow">
+    <div class="row">
+   <div class="col-6 mx-auto">
+      <h1>Add to Contact List</h1>
+      <input type="text" placeholder="Enter First Name" class={{formControl}} [(ngModel)]="firstname">
+      <input type="text" placeholder="Enter Last Name" class={{formControl}}  [(ngModel)]="lastname" >
+      <input type="text" placeholder="Email" class={{formControl}}  [(ngModel)]="email">
+      <input type="text" placeholder="phone Number" class={{formControl}}  [(ngModel)]="phoneno">
+      <input type="text" placeholder="Address" class={{formControl}}  [(ngModel)]="address">
+      <button class="btn btn-success w-100" (click)="addContact()">Add Contact</button>
+   </div>
+   <div class="col-lg-6 shadow pb-2">
+   <div class="row shadow" *ngFor="let contact of contactArray; let id=index" >
+   <div class="col-3 my-3">{{contact.firstname}}</div>
+   <div class="col-3 my-3"><button class="btn btn-info" routerLink="{{contact.firstname}}">View</button></div>
+   <div class="col-3 my-3"><button class="btn btn-success">Edit</button></div>
+   <div class="col-3 my-3"><button class="btn btn-danger" (click)="deleteContact(id)">Delete</button></div>
+   </div>
+   </div>
+    </div>
+
+</div>
+<!-- <div *ngIf="contactArray.length>0">
+<div class="table table-striped table-dark ">
+    <thead>
+        <tr>
+            <th>S/N</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Phone Number</th>
+            <th>Email Address</th>
+            <th>Address</th>
+            <th>Edit</th>
+            <th>Delete</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let contact of contactArray; let i =index">
+            <td>{{i+1}}</td>
+            <td>{{contact.firstname}}</td>
+            <td>{{contact.lastname}}</td>
+            <td>{{contact.phoneno}}</td>
+            <td>{{contact.email}}</td>
+            <td>{{contact.address}}</td>
+            <td><button class="btn btn-danger" (click)="deleteContact(i)">Delete</button></td>
+           <td><button class="btn btn-success" (click)="editContact(i)">Edit</button></td>
+        </tr>
+    </tbody>
+</div>
+</div> -->

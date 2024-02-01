@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4 shadow">
+            <div class="row col-6 mx-auto">
+              <input type="text" [(ngModel)]="MsgToChild">
+           <p class="text-center display-4 text-info">   Message From Child 1: {{receiveMsg}}</p>
+          <p class="text-center display-4 text-info"> Message From Child 2:{{receive}}</p>
+            </div>
+        </div>
+        <div class="col-lg-4 shadow">
+            <app-emit2 [connectToChild]="MsgToChild" (sendEmmitter)="receiveFromChild($event)"></app-emit2>
+        </div>
+        <div class="col-lg-4 shadow">
+            <app-emit3 [connectToChild]="MsgToChild" (emitter)="receiveFromChild2($event)"></app-emit3>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="row shadow">
+        <div class="col-lg-6 col-12 col-md-6"  *ngFor="let item of itemArray" style="cursor: pointer;" (click)="updateBudget(item)" >
+          <p class="text-success text-center">{{item.name}}</p>
+        </div>
+<div class="col-lg-6 col-12 col-md-6">
+    <app-big1></app-big1>
+</div>
+    </div>
+
+</div>
+<div class="container">
+<div>
+    <app-big2></app-big2>
+</div>
+</div>

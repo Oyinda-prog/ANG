@@ -1,0 +1,13 @@
+<div>
+    <div class="container">
+        <h2 class="text-center text-info">{{obj.name}} Details</h2>
+        <input type="text" value="{{obj.name}}" [(ngModel)]="obj.name">
+        <button (click)="save()">SAVE</button>
+        <div class="row" *ngIf="obj.name || obj.price">
+            <div class="col-lg-3 alert alert-success" >Name of Item:{{obj.name}}|</div>
+            <div class="col-lg-3 btn btn-danger">{{obj.quantity}}</div>
+            <div class="col-lg-3">{{obj.Availability}}</div>
+            <div class="col-lg-3">{{obj.price}}</div>
+            </div>
+    </div>
+</div>
